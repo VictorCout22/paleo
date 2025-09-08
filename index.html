@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diversidade Paleontológica Interativa</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Explore a Tabela de Sepkoski</h1>
+         <h1>Criado por <a style="color: blueviolet;" href="https://www.instagram.com/victorcout2/">@victorcout2</a></h1>
+        <div class="controls">
+            <label>Selecione até 5 Classes/Gêneros:</label>
+            <div id="group-checkboxes" class="checkbox-container">
+                            </div>
+            <button id="update-chart">Atualizar Gráfico</button>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="sepkoski-chart"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

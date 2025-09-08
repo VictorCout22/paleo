@@ -1,0 +1,193 @@
+/* --- Importação de fonte e variáveis de cor para consistência --- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #3498db;        /* Azul vibrante */
+    --secondary-color: #2980b9;      /* Azul escuro para hover */
+    --background-light: #f4f7f9;     /* Cinza claro para o fundo */
+    --surface-color: #ffffff;        /* Branco para o container */
+    --text-dark: #333;               /* Cinza escuro para texto */
+    --text-primary: #2c3e50;         /* Azul escuro para títulos */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* --- Estilos Globais e do Corpo da Página --- */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha o conteúdo ao topo, evitando que fique no meio da tela vazia */
+    min-height: 100vh;
+}
+
+h1 {
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+/* --- Estilos para o Container Principal --- */
+
+.container {
+    width: 95%;
+    max-width: 1200px;
+    background-color: var(--surface-color);
+    padding: 30px;
+    border-radius: 12px;
+}
+
+/* --- Estilos para os Controles e Checkboxes --- */
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+label {
+    font-size: 1.1em;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Contêiner para os checkboxes */
+.checkbox-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    max-height: 200px;
+    overflow-y: auto; /* Adiciona rolagem se a lista for grande */
+}
+
+/* Estilos para cada item de checkbox */
+.checkbox-container label.checkbox-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 400;
+    user-select: none;
+    transition: background-color 0.2s ease;
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+
+.checkbox-container label.checkbox-item:hover {
+    background-color: #e9ecef;
+}
+
+.checkbox-container input[type="checkbox"] {
+    display: none; /* Esconde o checkbox padrão */
+}
+
+/* O quadrado do checkbox personalizado */
+.checkbox-custom {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+/* O 'tick' do checkbox personalizado */
+.checkbox-custom::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.2s ease;
+}
+
+/* Estilo quando o checkbox está marcado */
+.checkbox-container input[type="checkbox"]:checked + .checkbox-custom {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.checkbox-container input[type="checkbox"]:checked + .checkbox-custom::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Estilo quando o checkbox está desabilitado */
+.checkbox-container input[type="checkbox"]:disabled + .checkbox-custom {
+    background-color: #e0e0e0;
+    border-color: #b0b0b0;
+    cursor: not-allowed;
+}
+.checkbox-container input[type="checkbox"]:disabled + .checkbox-custom::after {
+    background-color: #b0b0b0;
+}
+
+/* Estilo do botão de atualização */
+button {
+    padding: 12px 25px;
+    font-size: 1em;
+    font-weight: 700;
+    color: #fff;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* --- Estilos para o Contêiner do Gráfico --- */
+
+.chart-container {
+    position: relative;
+    height: 500px; /* Altura ajustada para telas maiores */
+    width: 100%;
+    margin: auto;
+}
+
+/* --- Responsividade para Telas Menores --- */
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+    
+    .chart-container {
+        height: 350px; /* Reduz a altura do gráfico em telas menores */
+    }
+
+    .checkbox-container {
+        max-height: 150px;
+        gap: 10px;
+    }
+}
