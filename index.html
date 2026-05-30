@@ -1,30 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diversidade Paleontológica Interativa</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Mineralogia Óptica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300&family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Explore a Tabela de Sepkoski</h1>
-         <h1>Criado por <a style="color: blueviolet;" href="https://www.instagram.com/victorcout2/">@victorcout2</a></h1>
-        <div class="controls">
-            <label>Selecione até 5 Classes/Gêneros:</label>
-            <div id="group-checkboxes" class="checkbox-container">
-                            </div>
-            <button id="update-chart">Atualizar Gráfico</button>
-        </div>
 
-        <div class="chart-container">
-            <canvas id="sepkoski-chart"></canvas>
-        </div>
-    </div>
+    <div id="ui-layer" class="hidden">
+        <div id="mineral-container">
+            <h1 id="target-mineral">???</h1>
+            <p id="message">Selecione as propriedades e clique em Confirmar.</p>
+        </div>
 
-    <script src="script.js"></script>
+        <div id="stats-container">
+            <button id="gear-btn" title="Mudar Paleta de Cores">⚙</button>
+            <div id="xp-count" class="score" title="Experiência">0 XP</div>
+            
+            <div id="settings-menu" class="hidden">
+                <h3>Escolha uma Paleta:</h3>
+                <button class="theme-opt" onclick="setTheme('default')">Padrão Escuro</button>
+                <button class="theme-opt" onclick="setTheme('theme-1')">Paleta 1 (Roxo e Rosa)</button>
+                <button class="theme-opt" onclick="setTheme('theme-2')">Paleta 2 (Salmão e Pastel)</button>
+                <button class="theme-opt" onclick="setTheme('theme-3')">Paleta 3 (Lavanda e Violeta)</button>
+                <button class="theme-opt" onclick="setTheme('theme-4')">Preto e Branco</button>
+            </div>
+        </div>
+
+        <div id="action-container">
+            <button id="confirm-btn">Confirmar</button>
+        </div>
+    </div>
+
+    <div id="overlay">
+        <h1 id="overlay-title">Jogo de Mineralogia</h1>
+        <p id="overlay-msg">Selecione as propriedades do mineral e confirme. Cada acerto vale 10 XP. Tente fazer a maior pontuação! Criado por: <a href="https://www.instagram.com/victor_cout0" style="text-decoration: none;color: brown;">@Victor</a></p>
+        <button id="start-btn">Iniciar Jogo</button>
+    </div>
+
+    <div id="summary-overlay" class="hidden">
+        <div class="summary-content">
+            <h2>Resumo: <span id="summary-mineral"></span></h2>
+            <p id="summary-xp-msg"></p>
+            
+            <div class="summary-lists">
+                <div class="list-box success-box">
+                    <h3>✅ Acertos</h3>
+                    <ul id="list-correct"></ul>
+                </div>
+                <div class="list-box danger-box">
+                    <h3>❌ Erros</h3>
+                    <ul id="list-wrong"></ul>
+                </div>
+                <div class="list-box warning-box">
+                    <h3>⚠️ Faltaram</h3>
+                    <ul id="list-missed"></ul>
+                </div>
+            </div>
+            
+            <button id="next-round-btn">Próximo </button>
+        </div>
+    </div>
+
+    <main id="board"></main>
+
+    <script src="script.js"></script>
 </body>
 </html>
