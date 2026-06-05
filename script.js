@@ -20,7 +20,11 @@ const mineralsDatabase = [
     { name: "Microclínio", aspects: ["Incolor", "Biaxial (-)", "Sistema Triclínico", "Cores Baixas", "Extinção Inclinada", "Ângulo 2V Grande", "Geminacão Albita", "Geminacão Periclinio"] },
     { name: "Ortoclásio", aspects: ["Incolor", "Biaxial (-)", "Sistema Monoclínico", "Cores Baixas", "Extinção Inclinada", "Ângulo 2V Grande", "Geminacão Carlsbad"] },
     { name: "Albita", aspects: ["Incolor", "Biaxial (+)", "Sistema Triclínico", "Cores Baixas", "Extinção Inclinada", "Ângulo 2V Grande", "Geminacão Albita"] },
-    { name: "Anortita", aspects: ["Incolor", "Biaxial (-)", "Sistema Triclínico", "Cores Baixas", "Extinção Inclinada", "Ângulo 2V Grande", "Geminacão Albita", "Geminacão Carlsbad"] }
+    { name: "Anortita", aspects: ["Incolor", "Biaxial (-)", "Sistema Triclínico", "Cores Baixas", "Extinção Inclinada", "Ângulo 2V Grande", "Geminacão Albita", "Geminacão Carlsbad"] },
+        { name: "Andaluzita", aspects: ["Incolor a Rosa", "Pleocroísmo Fraco", "Biaxial (-)", "Sistema Ortorrômbico", "Cores Baixas", "Extinção Reta", "Ângulo 2V Grande", "Elongação (-)"] },
+    { name: "Cianita", aspects: ["Incolor a Azul", "Biaxial (-)", "Sistema Triclínico", "Cores Baixas", "Extinção Inclinada", "Ângulo 2V Grande", "Elongação (+)"] },
+    { name: "Estaurolita", aspects: ["Amarelo", "Pleocroísmo Forte", "Biaxial (+)", "Sistema Monoclínico", "Cores Baixas", "Extinção Reta", "Ângulo 2V Grande", "Elongação (+)"] }
+];
 ];
 
 // ==========================================
